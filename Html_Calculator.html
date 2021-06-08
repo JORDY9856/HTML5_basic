@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+
+    <style>
+        
+        .op {
+            background-color: rgb(168, 166, 166);
+        }
+
+        [type=text]{ /*속성값은 대괄호[]로 감싸자*/
+            width: 200px;
+            height: 30px;
+            text-align: right;
+            font-size: 25px;
+            background-color: lightgray;
+            padding:5px;
+        }
+
+        [type=button]{
+            width:50px;
+            height: 50px;
+            size:2em; /*em은 대충 16px*/
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <h1> 간단 계산기</h1>
+    <hr>
+
+    <form name="forms">
+
+        <table>
+            <tr>
+                <td colspan="4"><input type="text" name="output" readonly></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="document.forms.output.value+='7'"></td>
+                <td><input type="button" value="8" onclick="document.forms.output.value+='8'"></td>
+                <td><input type="button" value="9" onclick="document.forms.output.value+='9'"></td>
+                <td><input type="button" class="op" value="/" onclick="document.forms.output.value+='/'"></td>
+
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="document.forms.output.value+='4'"></td>
+                <td><input type="button" value="5" onclick="document.forms.output.value+='5'"></td>
+                <td><input type="button" value="6" onclick="document.forms.output.value+='6'"></td>
+                <td><input type="button" class="op" value="*" onclick="document.forms.output.value+='*'"></td>
+
+            </tr>
+
+            <tr>
+                <td><input type="button" value="1" onclick="document.forms.output.value+='1'"></td>
+                <td><input type="button" value="2" onclick="document.forms.output.value+='2'"></td>
+                <td><input type="button" value="3" onclick="document.forms.output.value+='3'"></td>
+                <td><input type="button" class="op" value="-" onclick="document.forms.output.value+='-'"></td>
+
+            </tr>
+
+            <tr>
+                <td><input type="button" value="0" onclick="document.forms.output.value+='0'"></td>
+                <td><input type="button" class="op" value="C" onclick="document.forms.output.value=''"></td>
+                <td><input type="button" class="op" value="="  
+                onclick="document.forms.output.value= eval(document.forms.output.value)"></td>
+                <!-- 결과 출력 코드를 기억하자 -->
+                <td><input type="button" class="op" value="+" onclick="document.forms.output.value+='+'"></td>
+
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
