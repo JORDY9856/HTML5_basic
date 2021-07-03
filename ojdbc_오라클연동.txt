@@ -1,0 +1,15 @@
+1.
+C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar 파일을 복사하여
+
+2.
+C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext 폴더에 붙여넣기
+
+3.
+C:\Program Files\Java\jre1.8.0_91\lib\ext 폴더에 붙여넣기
+
+
+4. Javabuild path libraries에 add exteral jars 로 파일의 경로를 지정
+
+
+5.  이클립스 프로젝트의 Webcontent/WEB-INF/lib/에 붙여넣기
+

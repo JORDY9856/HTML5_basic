@@ -1,0 +1,54 @@
+[ JDBC 연동 절차 ]
+
+​
+
+1. 드라이버를 메모리 로딩
+
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+Class.forName("org.gjt.mm.mysql.Driver");
+
+​
+
+2. 연결객체 얻어오기 (connection 연결)
+
+String url = "jdbc:oracle:thin:@localhost:1521:xe";
+
+String user = "HR";
+
+String pass = "1234";
+
+Connection con = DriverManager.getConnection(url, user, pass);
+
+​
+
+3. SQL 문 작성하기
+
+​
+
+4. SQL전송객체 얻어오기
+
+- Statement
+
+- PreparedStatement (*주로 쓴다*)
+
+- CallStatement
+
+
+5. 전송 ( return 자료형 주의)
+
+- ResultSet executeQuery() : SELECT 문 
+
+- int executeUpdate() : INSERT/ UPDATE /DELETE문
+
+​
+
+6. [결과 처리]
+
+​
+
+7. 연결닫기
+
+close()
+
+​

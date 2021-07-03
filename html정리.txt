@@ -1,0 +1,9 @@
+for/ label,그리고 id/ class
+
+css에서 id는 #, class는 . 으로 구분
+
+다음과 같은 경우,
+label안에 for 로 지정, input의 id에는 for의 값과 같은 값을 넣는다
+<label for="name">이름</label>
+<input type="checkbox" id="name">
+
