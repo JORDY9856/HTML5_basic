@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>jsp</display-name>
+  <welcome-file-list>
+
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+ <!--  
+  <servlet>
+  	<servlet-name>SimpleControl</servlet-name> (2) 같은 이름을 찾아서
+  	<servlet-class>mvc.simple.SimpleControl</servlet-class>(3) 해당 클래스를 실행
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SimpleControl</servlet-name>
+  	<url-pattern>/sc</url-pattern> (1) /sc가 들어오거나 *.do가 들어오면 
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+   -->
+  
+  <servlet>
+  	<servlet-name>GuestControl</servlet-name>
+  	<servlet-class>mvc.guest.control.GuestControl</servlet-class> 
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>GuestControl</servlet-name>
+  	<url-pattern>/GuestControl</url-pattern>
+  	<url-pattern>*.gc</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
