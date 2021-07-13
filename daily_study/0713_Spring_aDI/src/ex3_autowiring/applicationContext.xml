@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<!-- @를 썼으면, 스캔을 해줘야 합니다 -->
+<context:component-scan base-package="ex3_autowiring"></context:component-scan>
+
+
+<!-- class는 경로
+	
+	<property> : setter을 이용할 때
+	
+	<constructor-arg> : 생성자를 이용할 때 (순서 주의)
+
+
+	자료형에 따른 분류
+	value : int, String 등등
+	
+	ref	  : Member member 등등
+								 -->
+
+
+
+<!-- setter -->
+<bean id='message' class="ex3_autowiring.MessageBeanKoImpl">
+	<property name='name' value='홍길동'></property>
+	<property name="message"><value>맛점하세요</value></property>
+</bean>
+
+
+<!-- 그냥 두개가 다 나오면 에러난다. 따라서 @Resource나 @Qualifier로 지정해야한다 -->
+<bean id='outputer' class="ex3_autowiring.OutputerImpl">
+	<property name="path" value='src\\ex3_autowiring\\save.txt'></property>
+</bean>
+
+ <bean id='outputer2' class="ex3_autowiring.OutputerImpl">
+	<property name="path" value='src\\ex3_autowiring\\message.txt'></property>
+</bean>
+</beans>

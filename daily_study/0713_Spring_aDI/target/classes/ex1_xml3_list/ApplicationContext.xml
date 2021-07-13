@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id='bean' class="ex1_xml3_list.ListBean">
+	<property name="intList">
+		<list>
+			<value>22</value>
+			<value>33</value>
+			<value>44</value>
+		</list>
+	</property>
+	
+	
+	<property name="memberList">
+		<list>
+			<ref bean='mb1'></ref>		<!-- 참조형 객체가 들어옴 -->
+			<ref bean='mb2'></ref>	
+			<bean class = "ex1_xml3_list.MemberBean"> <!--다이렉트로 가져와서 name필요없다 -->	
+			</bean>
+		</list>
+	</property>
+</bean>
+
+
+<!-- setter 이용 값 지정-->
+<bean id='mb1' class="ex1_xml3_list.MemberBean">
+	
+
+</bean>
+
+<!-- 생성자 이용 값 지정 -->
+<bean id='mb2' class="ex1_xml3_list.MemberBean">
+
+
+</bean>
+
+
+</beans>
