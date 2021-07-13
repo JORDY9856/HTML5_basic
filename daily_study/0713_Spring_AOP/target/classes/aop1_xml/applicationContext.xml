@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+<!-- 1. target 빈 생성 -->
+<bean id='targetBean' class="aop1_xml.MessageBeanImpl"></bean>
+
+<!--  2. advice 빈 생성 -->
+<bean id ='advice' class="aop1_xml.LoggingAdvice"></bean>
+
+<!--  3. AOP 환경 설정: (1) XML 방식; 잘안씀 namespace에서 체크 -->
+<aop:config>
+	<aop:pointcut expression="execution(public * aop1_xml.*.*Hello(..))"  id="pointCut" />
+	<!--public이고 패키지 명이 aop1_xml인 애들중에 이름이 Hello로 끝나는 애들  -->
+	<aop:aspect ref='advice'>
+	
+	
+	<!-- 	<aop:before method="before" pointcut-ref="pointCut" /> -->
+		<aop:around method="around" pointcut-ref="pointCut" />
+		
+	</aop:aspect>
+</aop:config>
+
+
+
+</beans>
