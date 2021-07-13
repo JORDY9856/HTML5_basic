@@ -1,0 +1,23 @@
+
+********스프링 프로젝트 세팅**********
+
+프로젝트 우클릭 - configure - covert to maven
+
+프로젝트 우클릭- spring - add spring nature
+
+ mvlrepository.com 접속, spring context 검색
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.1.9.RELEASE</version>
+</dependency>
+
+이후 pom.xml 파일 <dependencies> 태그를 생성 후 코드 복붙
+
+
+
+
+
+프레임워크란? : 디자인 패턴 + 클래스 라이브러리
